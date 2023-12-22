@@ -1,9 +1,9 @@
 import streamlit as st
 
 
-def setup_page(name: str, parent="App", icon="💡"):
+def setup_page(name: str, parent="Home", icon="💡"):
     config(name, icon)
-    if name != "App":
+    if name != "Home":
         switch_page_button("Go Home", parent)
 
 
@@ -13,6 +13,7 @@ def config(name: str, icon: str):
         page_icon=icon,
         initial_sidebar_state="collapsed",
     )
+    st.title(name)
 
 
 def switch_page_button(button_text: str, page_name: str):

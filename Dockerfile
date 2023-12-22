@@ -11,4 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["streamlit", "run", "App.py", "--browser.gatherUsageStats", "false"]
+CMD ["streamlit", "run", "Home.py", "--browser.gatherUsageStats", "false"]
