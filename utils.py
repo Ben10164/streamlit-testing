@@ -4,7 +4,7 @@ import streamlit as st
 def setup_page(name: str, parent="Home", icon="💡"):
     config(name, icon)
     if name != "Home":
-        switch_page_button("Go Home", parent)
+        switch_page_button(parent, "Go Home")
 
 
 def config(name: str, icon: str):
@@ -16,13 +16,16 @@ def config(name: str, icon: str):
     st.title(name)
 
 
-def switch_page_button(button_text: str, page_name: str):
+def switch_page_button(page_name: str, button_text=None):
     """
     Switch page programmatically in a multipage app
 
     Args:
         page_name (str): Target page name
     """
+    if button_text == None:
+        button_text = page_name
+
     from streamlit.runtime.scriptrunner import RerunData, RerunException
     from streamlit.source_util import get_pages
 
