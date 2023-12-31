@@ -34,7 +34,7 @@ if user_input := st.chat_input("What is up?"):
         response = ""
         for chunk in chat.send_message(user_input, stream=True):
             for character in chunk.text:
-                time.sleep(0.015)
+                time.sleep(0.01)
                 response += character
                 response_typing.markdown(response + "▌")
         response_typing.markdown(response)
